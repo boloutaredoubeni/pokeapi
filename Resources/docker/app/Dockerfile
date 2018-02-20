@@ -4,7 +4,7 @@ ENV PYTHONUNBUFFERED 1
 ENV DJANGO_SETTINGS_MODULE 'config.docker-compose'
 ENV PYTHONHASHSEED 'random'
 
-RUN mkdir /code
+RUN mkdir -p /code
 WORKDIR /code
 VOLUME /code
 

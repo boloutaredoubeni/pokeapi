@@ -15,6 +15,7 @@ services:
       - pg_data:/var/lib/postgresql/data
 
   app:
+    image: python:2.7
     build:
       context: .
       dockerfile: ./Resources/docker/app/Dockerfile
@@ -25,6 +26,7 @@ services:
       - cache
 
   web:
+    image: nginx:alpine
     build: 
       context: ./Resources
       dockerfile: ./docker/web/Dockerfile
@@ -36,8 +38,8 @@ services:
     links:
       - app
 
-volumes:
-  pg_data:
-    external: true
-  redis_data:
-    external: true
+# volumes:
+#   pg_data:
+#     external: true
+#   redis_data:
+#     external: true
